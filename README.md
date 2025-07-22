@@ -44,7 +44,7 @@ pip install -r requirements.txt
 ├── sampled_dataset.csv    # Example: initial training set
 ├── remaining_dataset.csv  # Example: data pool for active learning
 └── README.md
-
+---
 ## Custom Sample Selection
 You can flexibly combine element and sequence-based rules in any order of priority:
 ```python
@@ -53,5 +53,5 @@ criteria_list = [
     {"type": "sequence", "value": [1, 2]},   # Next: contains sequence [1,2]
     {"type": "element", "value": 5},         # Then: contains element 5
 ]
-
+---
 
