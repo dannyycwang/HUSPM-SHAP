@@ -26,7 +26,7 @@ It is designed for machine learning workflows that require:
 - **Integrated SHAP Analysis**: Explains model predictions at the feature/sequence position level
 - **Top-K Utility Sequence Mining**: Finds and ranks subsequences by their total SHAP contribution
 - **Data Export**: Combined feature and SHAP tables are exported for further analysis
-
+```
 ---
 
 ## Installation
@@ -44,6 +44,7 @@ pip install -r requirements.txt
 ├── sampled_dataset.csv    # Example: initial training set
 ├── remaining_dataset.csv  # Example: data pool for active learning
 └── README.md
+```
 ---
 ## Custom Sample Selection
 You can flexibly combine element and sequence-based rules in any order of priority:
