@@ -20,7 +20,7 @@ It is designed for machine learning workflows that require:
 ---
 
 ## Features
-
+```python
 - **Custom Pool-based Active Learning**: Selects training samples based on prioritized rules (element or sequence-based)
 - **Automated LSTM Model Training**: Sequential retraining in each active learning iteration
 - **Integrated SHAP Analysis**: Explains model predictions at the feature/sequence position level
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 
 ## File structure
-.
+```python
 ├── main.py                # Main workflow entry point
 ├── data_utils.py          # Data loading & preprocessing
 ├── model_utils.py         # Model definition & training
@@ -47,6 +47,7 @@ pip install -r requirements.txt
 
 ## Custom Sample Selection
 You can flexibly combine element and sequence-based rules in any order of priority:
+```python
 criteria_list = [
     {"type": "element", "value": 2},         # First: contains element 2
     {"type": "sequence", "value": [1, 2]},   # Next: contains sequence [1,2]
