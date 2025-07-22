@@ -1,5 +1,3 @@
-# HUSPM-SHAP
-This is a sample code implementing the HUSPM-SHAP approach. 
 
 ## Abstract
 
@@ -8,3 +6,51 @@ In rapidly evolving e-commerce industry, the capability of selecting high-qualit
 ![Diagram of HUSPM-SHAP concept](HUSPM-SHAP_concept.png)
 
 This algorithm is detailed in the following paper. Link: https://arxiv.org/abs/2410.07282
+
+
+# Active Learning with SHAP Utility Sequence Mining
+
+This repository provides a modular framework for **active learning on sequential data** with integrated **SHAP explainability** and **utility-based sequence mining**.  
+It is designed for machine learning workflows that require:
+- Flexible sample selection using elements or ordered subsequences (with priority)
+- Iterative deep learning (LSTM) model training
+- SHAP-based feature attribution and interpretability
+- Discovery of top-k utility subsequences for explainable AI
+
+---
+
+## Features
+
+- **Custom Pool-based Active Learning**: Selects training samples based on prioritized rules (element or sequence-based)
+- **Automated LSTM Model Training**: Sequential retraining in each active learning iteration
+- **Integrated SHAP Analysis**: Explains model predictions at the feature/sequence position level
+- **Top-K Utility Sequence Mining**: Finds and ranks subsequences by their total SHAP contribution
+- **Data Export**: Combined feature and SHAP tables are exported for further analysis
+
+---
+
+## Installation
+pip install -r requirements.txt
+
+
+## File structure
+.
+├── main.py                # Main workflow entry point
+├── data_utils.py          # Data loading & preprocessing
+├── model_utils.py         # Model definition & training
+├── active_learning.py     # Active learning logic
+├── shap_utility.py        # SHAP calculation & utility sequence mining
+├── requirements.txt
+├── sampled_dataset.csv    # Example: initial training set
+├── remaining_dataset.csv  # Example: data pool for active learning
+└── README.md
+
+## Custom Sample Selection
+You can flexibly combine element and sequence-based rules in any order of priority:
+criteria_list = [
+    {"type": "element", "value": 2},         # First: contains element 2
+    {"type": "sequence", "value": [1, 2]},   # Next: contains sequence [1,2]
+    {"type": "element", "value": 5},         # Then: contains element 5
+]
+
+
