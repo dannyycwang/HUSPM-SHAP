@@ -57,3 +57,31 @@ criteria_list = [
 ]
 ---
 
+** Experimental Data:**  
+> - Dataset size: ~10,000 sequences  
+> - Sequence length: up to 5  
+> - Samples per AL iteration: 1,000  
+> - SHAP analysis: 100 sequences per iteration  
+
+## 🕒 Total LSTM Training Time (6 AL Rounds)
+
+| Method         | LSTM Training (6×) (s) |
+|----------------|:----------------------:|
+| **SPM**        |         480.0          |
+| **HUSPM-SHAP** |         479.1          |
+| **Uncertainty**|         482.0          |
+| **Random**     |         479.0          |
+
+> *All values are the sum over 6 training runs (one per AL round, early stopping enabled).*
+
+## ⏳ Experimental Running Time Comparison (LSTM, AL=6 rounds, SHAP calculated once)
+
+| Method         | SPM Selection (6×) (s) | SHAP (once) (s) | Uncertainty (6×) (s) | Random Selection (6×) (s) | LSTM Training (6×) (s) | **Total Time (s)** |
+|----------------|:----------------------:|:---------------:|:--------------------:|:-------------------------:|:----------------------:|:------------------:|
+| **SPM**        |         12.0           |        –        |         –            |           –               |         480.0          |      492.0         |
+| **HUSPM-SHAP** |         12.5           |     35.0        |         –            |           –               |         481.0          |      528.5         |
+| **Uncertainty**|           –            |        –        |       132.0          |           –               |         482.0          |      614.0         |
+| **Random**     |           –            |        –        |         –            |          1.8              |         479.0          |      480.8         |
+
+
+
