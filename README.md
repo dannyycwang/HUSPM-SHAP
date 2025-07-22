@@ -30,8 +30,9 @@ It is designed for machine learning workflows that require:
 ---
 
 ## Installation
+```python
 pip install -r requirements.txt
-
+```
 
 ## File structure
 ```python
